@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 
@@ -22,31 +21,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(getRealId(getCurrentTheme()));
+        setTheme(getRealStyle(getCurrentTheme()));
         setContentView(R.layout.activity_main);
-        Log.d("mylogs", getRealId(getCurrentTheme()) + "");
-        Log.d("mylogs", (getCurrentTheme()) + "");
-        Log.d("mylogs", R.style.My1 + " fsdfg");
         init();
     }
 
     private void init() {
-        (findViewById(R.id.MyTheme1)).setOnClickListener(this);
-        (findViewById(R.id.MyTheme2)).setOnClickListener(this);
-        (findViewById(R.id.MyTheme3)).setOnClickListener(this);
-        (findViewById(R.id.MyTheme4)).setOnClickListener(this);
+        RadioButton radioButton1 = findViewById(R.id.MyTheme1);
+        RadioButton radioButton2 = findViewById(R.id.MyTheme2);
+        RadioButton radioButton3 = findViewById(R.id.MyTheme3);
+        RadioButton radioButton4 = findViewById(R.id.MyTheme4);
+        radioButton1.setOnClickListener(this);
+        radioButton2.setOnClickListener(this);
+        radioButton3.setOnClickListener(this);
+        radioButton4.setOnClickListener(this);
         switch (getCurrentTheme()) {
             case 1:
-                ((RadioButton) findViewById(R.id.MyTheme1)).setChecked(true);
+                radioButton1.setChecked(true);
                 break;
             case 2:
-                ((RadioButton) findViewById(R.id.MyTheme2)).setChecked(true);
+                radioButton2.setChecked(true);
                 break;
             case 3:
-                ((RadioButton) findViewById(R.id.MyTheme3)).setChecked(true);
+                radioButton3.setChecked(true);
                 break;
             case 4:
-                ((RadioButton) findViewById(R.id.MyTheme4)).setChecked(true);
+                radioButton4.setChecked(true);
                 break;
         }
     }
@@ -68,9 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setCurrentTheme(MyTheme4);
                 break;
         }
-
         recreate();
-
     }
 
     private void setCurrentTheme(int currentTheme) {
@@ -85,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return (sharedPreferences.getInt(KEY_CURRENT_THEME, -1));
     }
 
-    private int getRealId(int currentTheme) {
+    private int getRealStyle(int currentTheme) {
         switch (currentTheme) {
             case MyTheme1:
                 return R.style.My1;
