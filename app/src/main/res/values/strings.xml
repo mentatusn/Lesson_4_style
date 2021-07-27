@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lesson_4_style</string>
+    <string name="dfhrfth">dfhrfth</string>
+    <string name="login">Login</string>
+    <string name="password">password</string>
+    <string name="sing_out">Sing Out</string>
+    <string name="sing_in">Sing IN</string>
+    <string name="theme_1">theme 1</string>
+    <string name="theme_2">theme 2</string>
+    <string name="theme_3">theme 3</string>
+    <string name="theme_4">theme 4</string>
+</resources>
